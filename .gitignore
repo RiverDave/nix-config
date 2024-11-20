@@ -1,0 +1,6 @@
+result
+*.qcow2
+.direnv
+.env
+.envrc
+*.swp
