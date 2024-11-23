@@ -12,7 +12,8 @@
     enable = true;
     shellAliases = {
       ll = "ls -l";
-      update = "sudo nixos-rebuild switch --flake .#";
+      nup = "sudo nixos-rebuild switch --flake .#";
+      nts = "sudo nixos-rebuild test --flake .#";
     };
   };
 

@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs; [
     # Editors and system tools
     vim
+    neovim
     wget
     neofetch
     tmux
