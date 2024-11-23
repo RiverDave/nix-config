@@ -1,5 +1,5 @@
 # ./nixos/configuration.nix
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -9,6 +9,7 @@
     ./packages.nix
     ./services.nix
     ./hardware.nix
+    inputs.home-manager.nixosModules.default
   ];
 
   # Core system settings that don't fit elsewhere
@@ -17,6 +18,13 @@
     settings = {
 	      experimental-features = [ "nix-command" "flakes" ];
 	    };
+  };
+
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "riverdave" = import ./home.nix;
+    };
   };
 
 
