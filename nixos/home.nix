@@ -17,16 +17,22 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-     pkgs.hello
+    hello
+
+    spotify-player
+    ripgrep
+    thunderbird-unwrapped
+    teams-for-linux
+
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" "DejaVuSansMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -71,6 +77,34 @@
     # EDITOR = "emacs";
   };
 
-  # Let Home Manager install and manage itself.
+  # Let Home Manager install and manage itself..
   programs.home-manager.enable = true;
+
+  programs = {
+    git = {
+      enable = true;
+      userName = "David Rivera";
+      userEmail = "davidriverg@gmail.com";
+
+    };
+
+    bash = {
+      enable = true;
+      shellAliases = {
+        nixs = "sudo nixos-rebuild switch --flake .#";
+        nixt = "sudo nixos-rebuild test --flake .#";
+	vi = "nvim";
+	# git stuff
+        gst = "git status";
+        gc = "git commit";
+        gp = "git push";
+
+
+      };
+
+    };
+
+  };
+
+
 }

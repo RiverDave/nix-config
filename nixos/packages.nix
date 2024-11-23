@@ -3,6 +3,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # System wide packages
+  # for home based packages check home.nix
   environment.systemPackages = with pkgs; [
     # Editors and system tools
     vim
@@ -27,6 +29,28 @@
     chromium
     alacritty
     brightnessctl
+    spotify-player
+    ripgrep
+    thunderbird-unwrapped
+    teams-for-linux
+
+    # keystroke tracker
     xorg.xev
+
+
+    # core utils
+
+    #cc
+    bison
+    flex
+    fontforge
+    makeWrapper
+    pkg-config
+    gnumake
+    gcc
+    libiconv
+    autoconf
+    automake
+    libtool # freetype calls glibtoolize
   ];
 }
