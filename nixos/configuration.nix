@@ -13,10 +13,10 @@
 
   # Core system settings that don't fit elsewhere
   nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
+    package = pkgs.nixVersions.stable;
+    settings = {
+	      experimental-features = [ "nix-command" "flakes" ];
+	    };
   };
 
   # Internationalization
