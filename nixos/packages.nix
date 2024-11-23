@@ -40,7 +40,6 @@
 
     # core utils
 
-    #cc
     bison
     flex
     fontforge
@@ -52,5 +51,8 @@
     autoconf
     automake
     libtool # freetype calls glibtoolize
+
+    # This is for nvim to work correctly tbh
+    nodejs
   ];
 }

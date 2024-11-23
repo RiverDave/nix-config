@@ -22,10 +22,7 @@
     # # "Hello, world!" when run.
     hello
 
-    spotify-player
-    ripgrep
-    thunderbird-unwrapped
-    teams-for-linux
+
 
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
