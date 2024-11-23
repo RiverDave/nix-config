@@ -22,7 +22,12 @@
 
     # Other services
     openssh.enable = true;
+
+
   };
+
+  services.pipewire.enable = false;
+
 
   # Programs
   programs = {
