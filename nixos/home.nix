@@ -14,6 +14,10 @@
       ll = "ls -l";
       nup = "sudo nixos-rebuild switch --flake .#";
       nts = "sudo nixos-rebuild test --flake .#";
+      gst = "git status";
+      gp = "git push";
+      gc = "git commit";
+
     };
   };
 
