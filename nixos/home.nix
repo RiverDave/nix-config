@@ -90,11 +90,14 @@
       shellAliases = {
         nixs = "sudo nixos-rebuild switch --flake .#";
         nixt = "sudo nixos-rebuild test --flake .#";
+        nixd = "nix-collect-garbage -d";
+
 	vi = "nvim";
 	# git stuff
         gst = "git status";
         gc = "git commit";
         gp = "git push";
+        gaa = "git add .";
 
 
       };

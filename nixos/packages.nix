@@ -53,9 +53,13 @@
     autoconf
     automake
     libtool # freetype calls glibtoolize
+    python3 # freetype calls glibtoolize
 
-    # This is for nvim to work correctly tbh
+    # This is for nvim to work correctly (dependencies :( )
     nodejs
+
+    # Lsp's (I love Neovim)
+    nil
 
 
   ];
