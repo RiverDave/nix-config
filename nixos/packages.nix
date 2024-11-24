@@ -33,6 +33,7 @@
     ripgrep
     thunderbird-unwrapped
     teams-for-linux
+    direnv
 
     # keystroke tracker
     xorg.xev
@@ -40,6 +41,7 @@
 
     # core utils
 
+    unzip
     bison
     flex
     fontforge
@@ -54,5 +56,7 @@
 
     # This is for nvim to work correctly tbh
     nodejs
+
+
   ];
 }
