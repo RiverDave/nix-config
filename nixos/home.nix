@@ -29,7 +29,8 @@
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" "DejaVuSansMono" ]; })
+    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" "DejaVuSansMono" "Iosevka" ]; })
+    nerdfonts
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -91,8 +92,8 @@
         nixs = "sudo nixos-rebuild switch --flake .#";
         nixt = "sudo nixos-rebuild test --flake .#";
         nixd = "nix-collect-garbage -d";
+        vi = "nvim";
 
-	vi = "nvim";
 	# git stuff
         gst = "git status";
         gc = "git commit";

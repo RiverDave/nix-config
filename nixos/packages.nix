@@ -26,14 +26,20 @@
 
     # Multimedia and browsers
     firefox
+    pulseaudio
     chromium
     alacritty
+    kitty
     brightnessctl
     spotify-player
     ripgrep
     thunderbird-unwrapped
     teams-for-linux
     direnv
+    libreoffice
+    bluetuith
+    flameshot
+    pcmanfm
 
     # keystroke tracker
     xorg.xev

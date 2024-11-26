@@ -7,6 +7,7 @@
     };
 
     trackpoint.sensitivity = 255;
+    bluetooth.enable = true;
   };
 
   nixpkgs.config.pulseaudio = true;
