@@ -9,6 +9,9 @@
       };
       windowManager.i3.enable = true;
       displayManager.lightdm.enable = true;
+      displayManager.sessionCommands = ''
+        xrandr --output DP-1 --right-of LVDS-1 --mode 2560x1440
+      '';
     };
 
     # Input services
@@ -20,6 +23,10 @@
       };
     };
 
+    emacs = {
+      enable = true;
+    };
+
     # Other services
     openssh.enable = true;
     blueman.enable = true;
@@ -29,6 +36,7 @@
   };
 
   services.pipewire.enable = false;
+
 
 
   # Programs

@@ -75,6 +75,7 @@
     # EDITOR = "emacs";
   };
 
+
   # Let Home Manager install and manage itself..
   programs.home-manager.enable = true;
 
@@ -86,8 +87,19 @@
 
     };
 
+    emacs = {
+      enable = true;
+      package = pkgs.emacs;  # replace with pkgs.emacs-gtk if desired
+    };
+
     bash = {
       enable = true;
+
+      initExtra = ''
+      ./$HOME/flakes/init-session-vars.sh
+
+      '';
+
       shellAliases = {
         nixs = "sudo nixos-rebuild switch --flake .#";
         nixt = "sudo nixos-rebuild test --flake .#";
@@ -102,6 +114,8 @@
 
 
       };
+
+
 
     };
 

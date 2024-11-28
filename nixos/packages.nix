@@ -27,7 +27,7 @@
     # Multimedia and browsers
     firefox
     pulseaudio
-    chromium
+    ungoogled-chromium
     alacritty
     kitty
     brightnessctl
@@ -40,6 +40,8 @@
     bluetuith
     flameshot
     pcmanfm
+    emacs
+    arandr
 
     # keystroke tracker
     xorg.xev

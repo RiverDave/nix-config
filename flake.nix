@@ -2,18 +2,26 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
+
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+    };
+
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, rust-overlay, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, rust-overlay, emacs-overlay, ... }@inputs: 
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ rust-overlay.overlays.default ];
+        overlays = [
+        rust-overlay.overlays.default
+        emacs-overlay.overlays.default
+        ];
       };
     in
     {
