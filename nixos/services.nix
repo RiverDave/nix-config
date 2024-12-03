@@ -27,6 +27,10 @@
       enable = true;
     };
 
+    upower = {
+      enable = true;
+    };
+
     # Other services
     openssh.enable = true;
     blueman.enable = true;

@@ -95,10 +95,11 @@
     bash = {
       enable = true;
 
-      initExtra = ''
-      ./$HOME/flakes/init-session-vars.sh
-
-      '';
+      # TODO:: Still need to figure out how to export dirs/binaries to path...
+      # initExtra = ''
+      # ./$HOME/flakes/init-session-vars.sh
+      #
+      # '';
 
       shellAliases = {
         nixs = "sudo nixos-rebuild switch --flake .#";
