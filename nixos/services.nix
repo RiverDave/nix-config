@@ -6,6 +6,7 @@
       xkb = {
         layout = "us";
         variant = "";
+        options = "repeat_rate=100 repeat_delay=125";
       };
       windowManager.i3.enable = true;
       displayManager.lightdm.enable = true;
@@ -46,6 +47,8 @@
   # Programs
   programs = {
     mtr.enable = true;
+    nm-applet.enable = true; # nm front-end!
+
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;

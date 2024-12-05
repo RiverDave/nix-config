@@ -42,8 +42,13 @@
     pcmanfm
     emacs
     arandr
+    obsidian
+    ispell
+    jdk
+    cmake
+    pandoc
 
-    # keystroke tracker
+    # keystroke tracker for keybinding purposes
     xorg.xev
 
 

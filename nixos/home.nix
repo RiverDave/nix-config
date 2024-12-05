@@ -72,6 +72,7 @@
   #  /etc/profiles/per-user/riverdave/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
+    JAVA_HOME = "${pkgs.jdk}";
     # EDITOR = "emacs";
   };
 
