@@ -28,6 +28,7 @@
     firefox
     pulseaudio
     ungoogled-chromium
+    brave
     alacritty
     kitty
     brightnessctl
@@ -74,6 +75,18 @@
     # Lsp's (I love Neovim)
     nil
 
+    zoom-us
+    obs-studio
+
+
+
+  ];
+
+  fonts.packages = with pkgs; [
+
+  nerd-fonts.fira-code
+  nerd-fonts.droid-sans-mono
+    # pkgs.liberation_ttf
 
   ];
 }

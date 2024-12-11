@@ -69,6 +69,40 @@
             echo "Rust development environment loaded"
           '';
         };
+
+        purescript = pkgs.mkShell {
+        buildInputs = [
+          pkgs.nodejs
+          pkgs.gmp
+        ];
+        shellHook = ''
+          export LD_LIBRARY_PATH=${pkgs.gmp}/lib:$LD_LIBRARY_PATH
+        '';
+
+        };
+
+        ocaml = pkgs.mkShell {
+          buildInputs = with pkgs; [
+
+            ocaml
+            ocamlPackages.findlib
+            dune_2
+            ocamlPackages.ocaml-lsp
+            ocamlformat
+            ocamlPackages.ocamlformat-rpc-lib
+            ocamlPackages.utop
+            ocamlPackages.re
+            mpv
+            opam
+          ];
+
+          shellHook = ''
+            echo "OCaml development environment loaded"
+            opam init --disable-sandboxing -y
+            eval $(opam env)
+          '';
+
+        };
       };
     };
 }
