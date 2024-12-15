@@ -1,5 +1,6 @@
 # ./nixos/hardware.nix
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   hardware = {
     pulseaudio = {
       enable = true;
@@ -12,4 +13,3 @@
 
   nixpkgs.config.pulseaudio = true;
 }
-

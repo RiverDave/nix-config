@@ -1,4 +1,5 @@
-{ /* config, */ pkgs, ... }:
+# config,
+{ pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -22,9 +23,6 @@
     # # "Hello, world!" when run.
     hello
 
-
-
-
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -39,8 +37,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-
-
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -78,6 +74,37 @@
     # EDITOR = "emacs";
   };
 
+  # Special config files
+
+  home.file.".config/i3status/config".text = ''
+    general {
+        colors = true
+        interval = 5
+    }
+
+    order += "disk /"
+    order += "memory"
+    order += "battery all"
+    order += "tztime local"
+
+
+
+    disk "/" {
+        format = "SPACE AVAILABLE: %avail"
+    }
+
+    memory {
+        format = "RAM USED: %used"
+    }
+
+    battery all {
+        format = "BAT: %status %percentage"
+    }
+
+    tztime local {
+        format = "%V %A %e.%B   %H:%M:%S"
+    }
+  '';
 
   # Let Home Manager install and manage itself..
   programs.home-manager.enable = true;
@@ -92,7 +119,7 @@
 
     emacs = {
       enable = true;
-      package = pkgs.emacs;  # replace with pkgs.emacs-gtk if desired
+      package = pkgs.emacs; # replace with pkgs.emacs-gtk if desired
     };
 
     bash = {
@@ -110,16 +137,13 @@
         nixd = "nix-collect-garbage -d";
         vi = "nvim";
 
-	# git stuff
+        # git stuff
         gst = "git status";
         gc = "git commit";
         gp = "git push";
         gaa = "git add .";
 
-
       };
-
-
 
     };
 
@@ -129,6 +153,5 @@
     };
 
   };
-
 
 }

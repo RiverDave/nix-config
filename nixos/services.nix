@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   # X11 and display services
   services = {
     xserver = {
@@ -36,13 +37,9 @@
     openssh.enable = true;
     blueman.enable = true;
 
-
-
   };
 
   services.pipewire.enable = false;
-
-
 
   # Programs
   programs = {

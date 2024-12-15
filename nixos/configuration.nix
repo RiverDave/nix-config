@@ -1,5 +1,10 @@
 # ./nixos/configuration.nix
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -16,17 +21,19 @@
   nix = {
     package = pkgs.nixVersions.stable;
     settings = {
-	      experimental-features = [ "nix-command" "flakes" ];
-	    };
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+    };
   };
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = { inherit inputs; };
     users = {
       "riverdave" = import ./home.nix;
     };
   };
-
 
   # Internationalization
   i18n = {
@@ -46,4 +53,3 @@
 
   system.stateVersion = "24.05";
 }
-

@@ -13,18 +13,29 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, rust-overlay, emacs-overlay, ... }@inputs: 
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      rust-overlay,
+      emacs-overlay,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
-        rust-overlay.overlays.default
-        emacs-overlay.overlays.default
+          rust-overlay.overlays.default
+          emacs-overlay.overlays.default
         ];
       };
     in
     {
+
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
+
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         inherit system;
@@ -37,13 +48,15 @@
       devShells.${system} = {
         python = pkgs.mkShell {
           buildInputs = with pkgs; [
-            (python3.withPackages (ps: with ps; [
-              pip
-              virtualenv
-              black
-              pylint
-              pytest
-            ]))
+            (python3.withPackages (
+              ps: with ps; [
+                pip
+                virtualenv
+                black
+                pylint
+                pytest
+              ]
+            ))
           ];
 
           shellHook = ''
@@ -60,7 +73,10 @@
           buildInputs = with pkgs; [
             # Rust toolchain
             (rust-bin.stable.latest.default.override {
-              extensions = [ "rust-src" "rust-analyzer" ];
+              extensions = [
+                "rust-src"
+                "rust-analyzer"
+              ];
             })
             cargo-edit
           ];
@@ -71,13 +87,13 @@
         };
 
         purescript = pkgs.mkShell {
-        buildInputs = [
-          pkgs.nodejs
-          pkgs.gmp
-        ];
-        shellHook = ''
-          export LD_LIBRARY_PATH=${pkgs.gmp}/lib:$LD_LIBRARY_PATH
-        '';
+          buildInputs = [
+            pkgs.nodejs
+            pkgs.gmp
+          ];
+          shellHook = ''
+            export LD_LIBRARY_PATH=${pkgs.gmp}/lib:$LD_LIBRARY_PATH
+          '';
 
         };
 

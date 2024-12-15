@@ -1,9 +1,14 @@
 # ./nixos/users.nix
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   users.users.riverdave = {
     isNormalUser = true;
     description = "David Rivera";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+    ];
+    packages = with pkgs; [ ];
   };
 }

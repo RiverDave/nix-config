@@ -1,5 +1,7 @@
 # ./nixos/packages.nix
-{ config, pkgs, ... }: {
+# config,
+{ pkgs, ... }:
+{
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -48,10 +50,10 @@
     jdk
     cmake
     pandoc
+    pavucontrol
 
     # keystroke tracker for keybinding purposes
     xorg.xev
-
 
     # core utils
 
@@ -73,19 +75,18 @@
     nodejs
 
     # Lsp's (I love Neovim)
-    nil
+    nil # nix lsp
+    nixfmt-rfc-style # nix fmtter
 
     zoom-us
     obs-studio
-
-
 
   ];
 
   fonts.packages = with pkgs; [
 
-  nerd-fonts.fira-code
-  nerd-fonts.droid-sans-mono
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
     # pkgs.liberation_ttf
 
   ];

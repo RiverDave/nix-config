@@ -1,5 +1,6 @@
 # ./nixos/boot.nix
-{ config, ... }: {
+{ config, ... }:
+{
   boot.loader.grub = {
     enable = true;
     device = "/dev/sda";
