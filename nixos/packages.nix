@@ -70,6 +70,7 @@
     automake
     libtool # freetype calls glibtoolize
     python3 # freetype calls glibtoolize
+    qutebrowser
 
     # This is for nvim to work correctly (dependencies :( )
     nodejs
