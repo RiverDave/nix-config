@@ -119,6 +119,26 @@
           '';
 
         };
+
+        # Interfuse dev dependencies:
+        cpp = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            llvm
+            clang
+            clang-tools
+            cmake
+            ninja
+            bear
+            cppcheck
+            gdb
+            valgrind
+          ];
+
+          shellHook = ''
+            echo "C++ development environment loaded"
+          '';
+        };
+
       };
     };
 }

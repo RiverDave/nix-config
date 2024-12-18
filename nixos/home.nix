@@ -71,7 +71,7 @@
   #
   home.sessionVariables = {
     JAVA_HOME = "${pkgs.jdk}";
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Special config files

@@ -60,6 +60,8 @@
     unzip
     bison
     flex
+    clang-tools
+    lldb
     fontforge
     makeWrapper
     pkg-config
@@ -71,13 +73,16 @@
     libtool # freetype calls glibtoolize
     python3 # freetype calls glibtoolize
     qutebrowser
+    lazygit
 
     # This is for nvim to work correctly (dependencies :( )
     nodejs
 
-    # Lsp's (I love Neovim)
+    # Lsp's (Meant for Neovim)
     nil # nix lsp
     nixfmt-rfc-style # nix fmtter
+    lua-language-server
+
 
     zoom-us
     obs-studio
