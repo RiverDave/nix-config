@@ -82,6 +82,7 @@
     nil # nix lsp
     nixfmt-rfc-style # nix fmtter
     lua-language-server
+    stylua
 
 
     zoom-us
@@ -93,6 +94,9 @@
 
     nerd-fonts.fira-code
     nerd-fonts.droid-sans-mono
+    nerd-fonts.iosevka
+    nerd-fonts.sauce-code-pro
+    nerf-fonts.dejavu-sans
     # pkgs.liberation_ttf
 
   ];

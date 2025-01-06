@@ -132,6 +132,7 @@
             cppcheck
             gdb
             valgrind
+            ccls
           ];
 
           shellHook = ''
