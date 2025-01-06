@@ -123,7 +123,7 @@
     };
 
     bash = {
-      enable = true;
+      enable = false;
 
       # TODO:: Still need to figure out how to export dirs/binaries to path...
       # initExtra = ''

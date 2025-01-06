@@ -16,6 +16,7 @@
     tmux
     git
     btop
+    zsh
 
     # Display and window management
     i3
@@ -96,8 +97,6 @@
     nerd-fonts.droid-sans-mono
     nerd-fonts.iosevka
     nerd-fonts.sauce-code-pro
-    nerf-fonts.dejavu-sans
-    # pkgs.liberation_ttf
 
   ];
 }

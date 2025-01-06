@@ -41,8 +41,32 @@
 
   services.pipewire.enable = false;
 
-  # Programs
+  # Programs & related config
   programs = {
+
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+
+      shellAliases = {
+        nixs = "sudo nixos-rebuild switch --flake .#";
+        nixt = "sudo nixos-rebuild test --flake .#";
+        nixd = "nix-collect-garbage -d";
+        vi = "nvim";
+
+        # git stuff
+        gst = "git status";
+        gc = "git commit";
+        gp = "git push";
+        gaa = "git add .";
+
+
+
+      };
+    };
+
     mtr.enable = true;
     nm-applet.enable = true; # nm front-end!
 
